@@ -74,7 +74,9 @@ outer.top = 0
 [mode.main.binding]
     # Toggle accordion layout
     alt-shift-f = 'layout accordion tiles'
-
+   
+    alt-ctrl-f = 'layout floating tiling' 
+   
     # Toggle fullscreen
     alt-f = 'fullscreen'
 

@@ -42,6 +42,18 @@ raw = re.sub(
     count=1,
     flags=re.MULTILINE
 )
+
+raw = re.sub(
+    rf'    alt-ctrl-\w+ = \'workspace {re.escape(name)}\'\n',
+    '',
+    raw
+)
+raw = re.sub(
+    rf'    alt-ctrl-shift-\w+ = \'move-node-to-workspace {re.escape(name)}\'\n',
+    '',
+    raw
+)
+
 path.write_text(raw)
 EOF
 
