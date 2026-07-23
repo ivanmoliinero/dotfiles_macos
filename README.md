@@ -2,6 +2,9 @@
 This repository contains the config files for some of the utilites of the MacOS dev platform of ivanmoliinero.
 References taken from https://github.com/agenttank/dotfiles_macos
 
+## Raycast
+Improved Spotlight with better shortcut management, extensions for better integration with some utils and more.
+
 ## AeroSpace
 Tile manager for MacOS, inspired in i3 for Linux.
 
