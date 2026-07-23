@@ -1,0 +1,127 @@
+# Place a copy of this config to ~/.aerospace.toml
+# After that, you can edit ~/.aerospace.toml to your liking
+
+# Config version for compatibility and deprecations
+config-version = 2
+
+# You can use it to add commands that run after AeroSpace startup.
+after-startup-command = []
+
+# Start AeroSpace at login
+start-at-login = true
+
+# Automatically reload the config when the config file is saved
+auto-reload-config = false
+
+# Normalizations
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# The 'accordion-padding' specifies the size of accordion padding
+accordion-padding = 30
+
+# Possible values: tiles|accordion
+default-root-container-layout = 'accordion'
+
+# Possible values: horizontal|vertical|auto
+default-root-container-orientation = 'auto'
+
+# Mouse follows focus when focused monitor changes
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+
+# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
+automatically-unhide-macos-hidden-apps = false
+
+# Custom named workspaces
+persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "DEUTSCH"]
+
+# Notify sketchybar on workspace change
+exec-on-workspace-change = [
+  '/bin/bash',
+  '-c',
+  'sketchybar --trigger aerospace_workspace_changed FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
+]
+
+# Notify sketchybar on focus change
+on-focus-changed = [
+  'exec-and-forget sketchybar --trigger update_windows'
+]
+
+# A callback that runs every time binding mode changes
+on-mode-changed = []
+
+focus-follows-mouse.enabled = false
+
+# Key mapping preset
+key-mapping.preset = 'qwerty'
+
+# Gaps
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = 0
+outer.right = 0
+
+# CONFIG FOR SKETCHYBAR: Avoid overlapping between bar and windows, Retina display diff metrics.
+# outer.top = [{monitor.'^built-in retina display$' = 22 }, 54]
+
+# CONFIG FOR NORMAL MACOS MENUBAR
+outer.top = 0
+
+
+# 'main' binding mode declaration
+[mode.main.binding]
+    # Toggle accordion layout
+    alt-shift-f = 'layout accordion tiles'
+
+    # Toggle fullscreen
+    alt-f = 'fullscreen'
+
+    # Layouts
+    alt-slash = 'layout tiles horizontal vertical'
+    alt-comma = 'layout accordion horizontal vertical'
+
+    # Focus
+    alt-h = 'focus left'
+    alt-j = 'focus down'
+    alt-k = 'focus up'
+    alt-l = 'focus right'
+
+    # Move
+    alt-shift-h = 'move left'
+    alt-shift-j = 'move down'
+    alt-shift-k = 'move up'
+    alt-shift-l = 'move right'
+
+    # Resize
+    alt-minus = 'resize smart -50'
+    alt-equal = 'resize smart +50'
+
+    # Custom named workspaces navigation (alt+ctrl to avoid conflict with special chars like @ and #)
+    alt-ctrl-1 = 'workspace MISCELLANEOUS'
+    alt-ctrl-2 = 'workspace CLOUDLAB'
+    alt-ctrl-3 = 'workspace DEUTSCH'
+
+    # Move current window to custom named workspaces
+    alt-ctrl-shift-1 = 'move-node-to-workspace MISCELLANEOUS'
+    alt-ctrl-shift-2 = 'move-node-to-workspace CLOUDLAB'
+    alt-ctrl-shift-3 = 'move-node-to-workspace DEUTSCH'
+    
+    # Move workspace to monitor
+    alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+
+    # Enter service mode
+    alt-shift-semicolon = 'mode service'
+
+# 'service' binding mode declaration.
+[mode.service.binding]
+    esc = ['reload-config', 'mode main']
+    r = ['flatten-workspace-tree', 'mode main']
+    f = ['layout floating tiling', 'mode main']
+    backspace = ['close-all-windows-but-current', 'mode main']
+
+    alt-shift-h = ['join-with left', 'mode main']
+    alt-shift-j = ['join-with down', 'mode main']
+    alt-shift-k = ['join-with up', 'mode main']
+    alt-shift-l = ['join-with right', 'mode main']
