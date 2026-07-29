@@ -49,8 +49,8 @@ existing_move = re.search(rf"alt-ctrl-shift-{re.escape(key)}\s*=\s*'move-node-to
 
 if not existing_workspace:
     raw = raw.replace(
-        "    # Move workspace to monitor",
-        f"{workspace_binding}\n{move_binding}\n    # Move workspace to monitor"
+        "    # Monitor interaction",
+        f"{workspace_binding}\n{move_binding}\n    # Monitor interaction"
     )
 
 path.write_text(raw)
