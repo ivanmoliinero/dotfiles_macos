@@ -22,3 +22,7 @@ NOTE: Currently not being used. I am using Stats.app (via Homebrew) to retrieve 
 ## JankyBorders
 Paints the borders of the actual selected window being focused.
 https://github.com/FelixKratz/JankyBorders
+
+## Nix Package Manager
+Allows to have utils and commands without directly installing them on the system. Useful for smoke tests with uncommonly used utilities.
+Planning on switching to NixOS (OS based entirely on this) on my desktop in the near future.
