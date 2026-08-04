@@ -41,11 +41,11 @@ raw = re.sub(
     flags=re.MULTILINE
 )
 
-workspace_binding = f"    alt-ctrl-{key} = 'workspace {name}'"
-move_binding = f"    alt-ctrl-shift-{key} = 'move-node-to-workspace {name}'"
+workspace_binding = f"    ctrl-{key} = 'workspace {name}'"
+move_binding = f"    ctrl-shift-{key} = 'move-node-to-workspace {name}'"
 
-existing_workspace = re.search(rf"alt-ctrl-{re.escape(key)}\s*=\s*'workspace \w+'", raw)
-existing_move = re.search(rf"alt-ctrl-shift-{re.escape(key)}\s*=\s*'move-node-to-workspace \w+'", raw)
+existing_workspace = re.search(rf"ctrl-{re.escape(key)}\s*=\s*'workspace \w+'", raw)
+existing_move = re.search(rf"ctrl-shift-{re.escape(key)}\s*=\s*'move-node-to-workspace \w+'", raw)
 
 if not existing_workspace:
     raw = raw.replace(
@@ -60,4 +60,4 @@ aerospace reload-config
 aerospace workspace "$WORKSPACE_NAME"
 sketchybar --trigger aerospace_workspace_list_changed
 
-echo "Workspace '$WORKSPACE_NAME' created with alt-ctrl-$KEY"
+echo "Workspace '$WORKSPACE_NAME' created with ctrl-$KEY"

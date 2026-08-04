@@ -44,12 +44,12 @@ raw = re.sub(
 )
 
 raw = re.sub(
-    rf'    alt-ctrl-\w+ = \'workspace {re.escape(name)}\'\n',
+    rf'    ctrl-\w+ = \'workspace {re.escape(name)}\'\n',
     '',
     raw
 )
 raw = re.sub(
-    rf'    alt-ctrl-shift-\w+ = \'move-node-to-workspace {re.escape(name)}\'\n',
+    rf'    ctrl-shift-\w+ = \'move-node-to-workspace {re.escape(name)}\'\n',
     '',
     raw
 )
