@@ -16,3 +16,10 @@ Or alternatively, just move one window outside the container (left or right).
 NOTE: Some other options will be investigated:
 - Pile multiple windows, not just two.
 - Pile vertically, right now something odd happens and all windows are put into tiles layout.
+
+## Ghostty: Quick terminal
+Instead of opening Ghostty each time a new terminal is needed for quick commands, the quick terminal shortcut can be used.
+It works as a singleton pop-up that allows the user to run fast commands to do quick checks instead of having a full terminal session opened and persisted in a window.
+It has been configured in the Ghostty terminal to respond to the **alt-shift-t** shortcut in order to be consistent with the shortcuts of AeroSpace instead of using the Ghostty conventions (because this terminal can be accessed from anywhere).
+
+NOTE: The global option has been used. This is needed to be able to invoke the terminal from wherever in the desktop. Moreover, Ghostty needs permissions into System Settings → Privacy & Security. Feel completely free to remove the global tag if you are not comfortable with this configuration.

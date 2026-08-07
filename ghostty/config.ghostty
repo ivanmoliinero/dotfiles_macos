@@ -21,6 +21,7 @@ keybind = cmd+d=new_split:right
 keybind = cmd+shift+d=new_split:down
 keybind = cmd+w=close_surface
 keybind = cmd+t=new_window
+keybind = global:alt+shift+t=toggle_quick_terminal
 
 keybind = cmd+shift+h=goto_split:left
 keybind = cmd+shift+l=goto_split:right
