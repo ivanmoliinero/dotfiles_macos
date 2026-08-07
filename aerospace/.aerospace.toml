@@ -14,7 +14,7 @@ start-at-login = true
 auto-reload-config = false
 
 # Normalizations
-enable-normalization-flatten-containers = false
+enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = false
 
 # The 'accordion-padding' specifies the size of accordion padding
@@ -121,13 +121,15 @@ outer.top = 0
 # 'service' binding mode declaration.
 [mode.service.binding]
     esc = ['reload-config', 'mode main']
+    alt-shift-period = ['reload-config', 'mode main']
     r = ['flatten-workspace-tree']
     f = ['layout floating tiling']
 
-    alt-shift-h = ['join-with left']
-    alt-shift-j = ['join-with down']
-    alt-shift-k = ['join-with up']
-    alt-shift-l = ['join-with right']
+    # Chain the join-with command and the layout orientation command
+    alt-shift-h = ['join-with left', 'layout tiles horizontal']
+    alt-shift-j = ['join-with down', 'layout tiles vertical']
+    alt-shift-k = ['join-with up', 'layout tiles vertical']
+    alt-shift-l = ['join-with right', 'layout tiles horizontal']
 
     alt-h = ['layout tiles horizontal']
     alt-v = ['layout tiles vertical']
