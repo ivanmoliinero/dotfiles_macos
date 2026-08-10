@@ -33,7 +33,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Custom named workspaces
-persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "DEUTSCH"]
+persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB"]
 
 # Notify sketchybar on workspace change
 exec-on-workspace-change = [
@@ -103,12 +103,10 @@ outer.top = 0
     # Custom named workspaces navigation (ctrl to avoid conflict with special chars like @ and #)
     ctrl-1 = 'workspace MISCELLANEOUS'
     ctrl-2 = 'workspace CLOUDLAB'
-    ctrl-3 = 'workspace DEUTSCH'
 
     # Move current window to custom named workspaces
     ctrl-shift-1 = 'move-node-to-workspace MISCELLANEOUS'
     ctrl-shift-2 = 'move-node-to-workspace CLOUDLAB'
-    ctrl-shift-3 = 'move-node-to-workspace DEUTSCH'
     
     # Monitor interaction
     alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next' 
