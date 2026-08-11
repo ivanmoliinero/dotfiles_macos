@@ -12,7 +12,7 @@ Tile manager for MacOS, inspired in i3 for Linux.
 ## Browser
 The browser currently being used is Zen Browser, a fork of Mozilla Firefox. 
 I was only using qutebrowser given that the previous browser I used (Orion) had some problems with AeroSpace tiling management, and qutebrowser supported vim-like shortcuts.
-With the extension `tridactyl`, I can obtain a vim experience nearly identical to the one of qutebrowser. 
+Vim-like shortcuts are good for some tasks and can accelerate the workflow, but generally moving inside website with the keyboard is a little bit odd for me. For now I am sticking with normal navigation.
 
 ## Terminal
 Ghostty terminal. Fast, written in Zig. I am using Starship to make the initial shell prompt more custom. I have not modified it in depth although for the moment.
