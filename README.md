@@ -28,4 +28,8 @@ https://github.com/FelixKratz/JankyBorders
 ## Nix Package Manager
 Allows to have utils and commands without directly installing them on the system. Useful for smoke tests with uncommonly used utilities.
 
+## Automator shortcut to open Ghostty in finder
+Whenever I am navigating through the finder and I want to quickly open a terminal inside a directory, I have to do it with the mouse by searching the respective button, which is hidden. Too slow.
+With the Automator workflow included in this repo, with any desired shortcut the terminal is open. In the respective directory there is a CONFIG.md explaining how to set it up.
+
 Planning on switching to NixOS (OS based entirely on this) on my desktop in the near future.
