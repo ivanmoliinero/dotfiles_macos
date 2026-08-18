@@ -13,5 +13,18 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 
 # Clone the zsh-shift-select repository into the Oh My Zsh custom plugins directory
 git clone https://github.com/jirutka/zsh-shift-select.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-shift-select
+
+# Clone the Powerlevel10k repository with depth 1 for a faster download
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 Finally, replace (via hard link or as desired) the original config script in ~/.zshrc with the one located inside this repository.
+
+## Additional: theme Powerlevel10k
+This is the main theme used for the terminal looks. It requires some configuration apart from the initial `git clone`.
+This configuration is manual at the time of the first activation, automatically detected by the theme. If you want to modify it afterwards, please run:
+```bash
+p10k configure
+```
+Apart from visual features, this theme introduces `Instant Prompt`. This functionality loads the UI of the terminal first and delegates other utils that may take more time to the background.
+That way the loading of all the utils takes a little bit more but the terminal is presented to the user for basic usability nearly instantaneously. The creator of the theme refers as this as the main mechanism used in browsers.
+Prefetching things is a really extended trick for improving UX. I have seen lately that they pretend to integrate prefetching in web when hovering a link, which can impact UX a lot as said.
