@@ -32,4 +32,8 @@ Allows to have utils and commands without directly installing them on the system
 Whenever I am navigating through the finder and I want to quickly open a terminal inside a directory, I have to do it with the mouse by searching the respective button, which is hidden. Too slow.
 With the Automator workflow included in this repo, with any desired shortcut the terminal is open. In the respective directory there is a CONFIG.md explaining how to set it up.
 
+## Oh My Zsh
+Zsh is not that bad, but this tool can really enhance its utils.
+I am using some manual configuration. Check the specific directory in order to setup this util.
+
 Planning on switching to NixOS (OS based entirely on this) on my desktop in the near future.
