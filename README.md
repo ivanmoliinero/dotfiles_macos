@@ -15,7 +15,7 @@ I was only using qutebrowser given that the previous browser I used (Orion) had 
 Vim-like shortcuts are good for some tasks and can accelerate the workflow, but generally moving inside website with the keyboard is a little bit odd for me. For now I am sticking with normal navigation.
 
 ## Terminal
-Ghostty terminal. Fast, written in Zig. I am using Starship to make the initial shell prompt more custom. I have not modified it in depth although for the moment.
+Ghostty terminal. Fast, written in Zig. I am using it alongside other configurations, so you may want to check them out in the zshrc directory. 
 
 ## Sketchybar
 New bar to see stats and other configurations for AeroSpace workspaces of the system.
@@ -31,9 +31,5 @@ Allows to have utils and commands without directly installing them on the system
 ## Automator shortcut to open Ghostty in finder
 Whenever I am navigating through the finder and I want to quickly open a terminal inside a directory, I have to do it with the mouse by searching the respective button, which is hidden. Too slow.
 With the Automator workflow included in this repo, with any desired shortcut the terminal is open. In the respective directory there is a CONFIG.md explaining how to set it up.
-
-## Oh My Zsh
-Zsh is not that bad, but this tool can really enhance its utils.
-I am using some manual configuration. Check the specific directory in order to setup this util.
 
 Planning on switching to NixOS (OS based entirely on this) on my desktop in the near future.
