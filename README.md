@@ -17,6 +17,10 @@ Vim-like shortcuts are good for some tasks and can accelerate the workflow, but 
 ## Terminal
 Ghostty terminal. Fast, written in Zig. I am using it alongside other configurations, so you may want to check them out in the zshrc directory. 
 
+## NeoVim + LazyVim
+Terminal editor with predefined config of LazyVim. Did not test the config thoroughly though.
+The specific commands for LazyVim can be seen pressing `space` key (default key for LazyVim).
+
 ## Sketchybar
 New bar to see stats and other configurations for AeroSpace workspaces of the system.
 NOTE: Currently not being used. I am using Stats.app (via Homebrew) to retrieve system stats.
