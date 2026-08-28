@@ -31,3 +31,6 @@ keybind = cmd+shift+j=goto_split:down
 # --- DOCK ICON ---
 macos-icon = custom
 macos-custom-icon = /Applications/Ghostty.app/Contents/Resources/Ghostty.icns
+
+# --- SSH TERM CONFIG ---
+term = xterm-256color
