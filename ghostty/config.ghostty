@@ -34,3 +34,6 @@ macos-custom-icon = /Applications/Ghostty.app/Contents/Resources/Ghostty.icns
 
 # --- SSH TERM CONFIG ---
 term = xterm-256color
+
+# --- QUICK TERMINAL ---
+quick-terminal-size = 50%
