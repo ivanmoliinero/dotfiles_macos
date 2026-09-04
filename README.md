@@ -36,4 +36,8 @@ Allows to have utils and commands without directly installing them on the system
 Whenever I am navigating through the finder and I want to quickly open a terminal inside a directory, I have to do it with the mouse by searching the respective button, which is hidden. Too slow.
 With the Automator workflow included in this repo, with any desired shortcut the terminal is open. In the respective directory there is a CONFIG.md explaining how to set it up.
 
+## Deskflow: Virtual KVM
+To actively use my main workstation and my laptop seamlessly, this tool links them via LAN in order to share the devices just like a phyisical KVM.
+This way I can work with them as a single device.
+
 Planning on switching to NixOS (OS based entirely on this) on my desktop in the near future.
