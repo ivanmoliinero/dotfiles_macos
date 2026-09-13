@@ -33,7 +33,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Custom named workspaces
-persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB"]
+persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "MIV"]
 
 # Notify sketchybar on workspace change
 exec-on-workspace-change = [
@@ -108,6 +108,8 @@ outer.top = 0
     ctrl-shift-1 = 'move-node-to-workspace MISCELLANEOUS'
     ctrl-shift-2 = 'move-node-to-workspace CLOUDLAB'
     
+    ctrl-3 = 'workspace MIV'
+    ctrl-shift-3 = 'move-node-to-workspace MIV'
     # Monitor interaction
     alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next' 
     alt-shift-tab = 'move-node-to-monitor --wrap-around next'
