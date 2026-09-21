@@ -143,3 +143,28 @@ outer.top = 0
 
     alt-h = ['layout tiles horizontal']
     alt-v = ['layout tiles vertical']
+
+# Auto config for windows in each workspace
+[[on-window-detected]]
+if.app-id = 'com.hnc.Discord'
+run = ['move-node-to-workspace MISCELLANEOUS']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.iCal'
+run = ['move-node-to-workspace MISCELLANEOUS']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.reminders'
+run = ['move-node-to-workspace MISCELLANEOUS']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = ['move-node-to-workspace MISCELLANEOUS']
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = ['move-node-to-workspace MISCELLANEOUS']
+
+[[on-window-detected]]
+if.app-id = 'notion.id'
+run = ['move-node-to-workspace MISCELLANEOUS']
