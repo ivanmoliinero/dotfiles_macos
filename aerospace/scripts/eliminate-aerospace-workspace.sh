@@ -44,7 +44,7 @@ raw = re.sub(
 )
 
 raw = re.sub(
-    rf'    ctrl-\w+ = \'workspace {re.escape(name)}\'\n',
+    rf'    ctrl-\w+ = \'exec-and-forget .+? {re.escape(name)}\'\n',
     '',
     raw
 )

@@ -28,6 +28,7 @@ workspaces = config.get('persistent-workspaces', [])
 
 name = "$WORKSPACE_NAME"
 key = "$KEY"
+script_path = "/Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh"
 
 if name not in workspaces:
     workspaces.append(name)
@@ -41,10 +42,10 @@ raw = re.sub(
     flags=re.MULTILINE
 )
 
-workspace_binding = f"    ctrl-{key} = 'workspace {name}'"
+workspace_binding = f"    ctrl-{key} = 'exec-and-forget {script_path} {key} \"{name}\"'"
 move_binding = f"    ctrl-shift-{key} = 'move-node-to-workspace {name}'"
 
-existing_workspace = re.search(rf"ctrl-{re.escape(key)}\s*=\s*'workspace \w+'", raw)
+existing_workspace = re.search(rf"ctrl-{re.escape(key)}\s*=\s*'exec-and-forget", raw)
 existing_move = re.search(rf"ctrl-shift-{re.escape(key)}\s*=\s*'move-node-to-workspace \w+'", raw)
 
 if not existing_workspace:

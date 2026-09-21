@@ -33,7 +33,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Custom named workspaces
-persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "MIV"]
+persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "MIV", "PSI", "COMPILADORS", "ALGORITMICA"]
 
 # Notify sketchybar on workspace change
 exec-on-workspace-change = [
@@ -101,15 +101,25 @@ outer.top = 0
     alt-equal = 'resize smart +50'
 
     # Custom named workspaces navigation (ctrl to avoid conflict with special chars like @ and #)
-    ctrl-1 = 'workspace MISCELLANEOUS'
-    ctrl-2 = 'workspace CLOUDLAB'
+    # Keybindings for workspace switching with fast Hammerspoon alerts
+    ctrl-1 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 1 "MISCELLANEOUS"'
+    ctrl-2 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 2 "CLOUDLAB"'
+    ctrl-3 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 3 "MIV"'
+    ctrl-4 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 4 "PSI"'
+    ctrl-5 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 5 "COMPILADORS"'
+    ctrl-6 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 6 "ALGORITMICA"'
+
+    # Keybinding to show the fast workspace list menu
+    ctrl-space = 'exec-and-forget /opt/homebrew/bin/hs -c "selectWorkspace()"'
 
     # Move current window to custom named workspaces
     ctrl-shift-1 = 'move-node-to-workspace MISCELLANEOUS'
     ctrl-shift-2 = 'move-node-to-workspace CLOUDLAB'
-    
-    ctrl-3 = 'workspace MIV'
     ctrl-shift-3 = 'move-node-to-workspace MIV'
+    ctrl-shift-4 = 'move-node-to-workspace PSI'
+    ctrl-shift-5 = 'move-node-to-workspace COMPILADORS'
+    ctrl-shift-6 = 'move-node-to-workspace ALGORITMICA'
+
     # Monitor interaction
     alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next' 
     alt-shift-tab = 'move-node-to-monitor --wrap-around next'
