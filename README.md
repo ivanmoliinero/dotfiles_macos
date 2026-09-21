@@ -9,6 +9,10 @@ Better app uninstallation (instead of dragging into recycle bin, uninstall app +
 ## AeroSpace
 Tile manager for MacOS, inspired in i3 for Linux.
 
+## Hammerspoon
+Util to paint freely on MacOS screen. Useful to show indicators when changing between Aerospace workspaces as well as showing a detailed list of 
+available workspaces to go to.
+
 ## Browser
 The browser currently being used is Zen Browser, a fork of Mozilla Firefox. 
 I was only using qutebrowser given that the previous browser I used (Orion) had some problems with AeroSpace tiling management, and qutebrowser supported vim-like shortcuts.
