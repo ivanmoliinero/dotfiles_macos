@@ -9,6 +9,9 @@ Better app uninstallation (instead of dragging into recycle bin, uninstall app +
 ## AeroSpace
 Tile manager for MacOS, inspired in i3 for Linux.
 
+## AltTab (personalised fork)
+Forked from official AltTab repository, I have modified the original repo for compatibility with AeroSpace. Now, only the windows from the actual workspace are shown.
+
 ## Hammerspoon
 Util to paint freely on MacOS screen. Useful to show indicators when changing between Aerospace workspaces as well as showing a detailed list of 
 available workspaces to go to.
@@ -25,10 +28,6 @@ Ghostty terminal. Fast, written in Zig. I am using it alongside other configurat
 Terminal editor with predefined config of LazyVim. Did not test the config thoroughly though.
 The specific commands for LazyVim can be seen pressing `space` key (default key for LazyVim).
 
-## Sketchybar
-New bar to see stats and other configurations for AeroSpace workspaces of the system.
-NOTE: Currently not being used. I am using Stats.app (via Homebrew) to retrieve system stats.
-
 ## JankyBorders
 Paints the borders of the actual selected window being focused.
 https://github.com/FelixKratz/JankyBorders
@@ -43,5 +42,11 @@ With the Automator workflow included in this repo, with any desired shortcut the
 ## Deskflow: Virtual KVM
 To actively use my main workstation and my laptop seamlessly, this tool links them via LAN in order to share the devices just like a phyisical KVM.
 This way I can work with them as a single device.
+
+## Tailscale
+Connectivity between mobile proxy to allow Wake-On-LAN directly from within LAN instead of having to rely on port routing without security protections or router modification.
+
+## RustDesk
+Usage of desktop directly from Laptop. Used with direct IP obtained from Tailscale network.
 
 Planning on switching to NixOS (OS based entirely on this) on my desktop in the near future.
