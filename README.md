@@ -10,7 +10,7 @@ Better app uninstallation (instead of dragging into recycle bin, uninstall app +
 Tile manager for MacOS, inspired in i3 for Linux.
 
 ## AltTab (personalised fork)
-Forked from official AltTab repository, I have modified the original repo for compatibility with AeroSpace. Now, only the windows from the actual workspace are shown.
+Forked from official AltTab repository, I have modified the original repo for compatibility with AeroSpace and a pie menu visualization. Now, only the windows from the actual workspace are shown.
 
 ## Hammerspoon
 Util to paint freely on MacOS screen. Useful to show indicators when changing between Aerospace workspaces as well as showing a detailed list of 
