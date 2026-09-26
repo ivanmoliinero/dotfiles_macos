@@ -119,7 +119,6 @@ outer.top = 0
     ctrl-shift-4 = 'move-node-to-workspace PSI'
     ctrl-shift-5 = 'move-node-to-workspace COMPILADORS'
     ctrl-shift-6 = 'move-node-to-workspace ALGORITMICA'
-
     # Monitor interaction
     alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next' 
     alt-shift-tab = 'move-node-to-monitor --wrap-around next'

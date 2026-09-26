@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # Required parameters:
 # @raycast.schemaVersion 1
@@ -10,54 +11,73 @@
 # @raycast.icon ➖
 # @raycast.packageName Aerospace
 
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+
 WORKSPACE_NAME=$(echo "$1" | tr '[:lower:]' '[:upper:]')
 if [ -z "$WORKSPACE_NAME" ]; then
   echo "Usage: $0 <workspace-name>"
   exit 1
 fi
 
-WINDOWS=$(aerospace list-windows --workspace "$WORKSPACE_NAME" 2>/dev/null)
+WINDOWS=$(aerospace list-windows --workspace "$WORKSPACE_NAME" 2>/dev/null || true)
 if [ -n "$WINDOWS" ]; then
   echo "Error: workspace '$WORKSPACE_NAME' has windows open. Move them out first."
   exit 1
 fi
 
-python3 << EOF
-import tomllib, re, pathlib
+python3 - "$WORKSPACE_NAME" << 'EOF'
+import sys, re, pathlib
 
-path = pathlib.Path.home() / '.aerospace.toml'
-raw = path.read_text()
-config = tomllib.loads(raw)
-workspaces = config.get('persistent-workspaces', [])
+name = sys.argv[1].strip()
 
-name = "$WORKSPACE_NAME"
-if name in workspaces:
-    workspaces.remove(name)
+# Target configuration files to keep synchronized
+candidate_paths = [
+    pathlib.Path.home() / '.aerospace.toml',
+    pathlib.Path.home() / '.config/aerospace/aerospace.toml',
+    pathlib.Path.home() / 'setup-config/dotfiles_macos/aerospace/.aerospace.toml',
+]
 
-new_list = ', '.join(f'"{w}"' for w in workspaces)
-raw = re.sub(
-    r'(^\s*persistent-workspaces\s*=\s*)\[.*?\](\s*)$',
-    rf'\1[{new_list}]\2',
-    raw,
-    count=1,
-    flags=re.MULTILINE
-)
+processed_files = set()
 
-raw = re.sub(
-    rf'    ctrl-\w+ = \'exec-and-forget .+? {re.escape(name)}\'\n',
-    '',
-    raw
-)
-raw = re.sub(
-    rf'    ctrl-shift-\w+ = \'move-node-to-workspace {re.escape(name)}\'\n',
-    '',
-    raw
-)
+for path in candidate_paths:
+    if not path.exists():
+        continue
+    resolved = path.resolve()
+    if resolved in processed_files:
+        continue
+    processed_files.add(resolved)
 
-path.write_text(raw)
+    raw = path.read_text(encoding='utf-8')
+
+    # 1. Update persistent-workspaces array
+    match = re.search(r'(^\s*persistent-workspaces\s*=\s*)\[(.*?)\]', raw, re.MULTILINE | re.DOTALL)
+    if match:
+        prefix = match.group(1)
+        inner = match.group(2)
+        tokens = re.findall(r'["\']([^"\']+)["\']', inner)
+        # Filter out target workspace (case-insensitive) and empty tokens
+        workspaces = [w.strip() for w in tokens if w.strip() and w.strip().upper() != name.upper()]
+        new_list = ', '.join(f'"{w}"' for w in workspaces)
+        raw = raw[:match.start()] + f'{prefix}[{new_list}]' + raw[match.end():]
+
+    # 2. Remove workspace navigation bindings (exec-and-forget or workspace command)
+    pattern_nav = rf'^\s*ctrl-\S+\s*=.*?(?:exec-and-forget\s+.+?|workspace\s+)["\']?{re.escape(name)}["\']?\s*[\'"]\s*\n'
+    raw = re.sub(pattern_nav, '', raw, flags=re.MULTILINE)
+
+    # 3. Remove move-node-to-workspace bindings
+    pattern_move = rf'^\s*ctrl-shift-\S+\s*=.*?move-node-to-workspace\s+["\']?{re.escape(name)}["\']?\s*[\'"]\s*\n'
+    raw = re.sub(pattern_move, '', raw, flags=re.MULTILINE)
+
+    # 4. Clean extra trailing blank lines before sections
+    raw = re.sub(r'\n{3,}(\s*#\s*Monitor interaction)', r'\n\n\1', raw)
+
+    path.write_text(raw, encoding='utf-8')
 EOF
 
 aerospace reload-config
-sketchybar --trigger aerospace_workspace_list_changed
+
+if command -v sketchybar >/dev/null 2>&1; then
+  sketchybar --trigger aerospace_workspace_list_changed
+fi
 
 echo "Workspace '$WORKSPACE_NAME' removed"
