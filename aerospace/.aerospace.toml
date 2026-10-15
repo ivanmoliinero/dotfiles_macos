@@ -33,7 +33,7 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 automatically-unhide-macos-hidden-apps = false
 
 # Custom named workspaces
-persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "MIV", "PSI", "COMPILADORS", "ALGORITMICA"]
+persistent-workspaces = ["MISCELLANEOUS", "CLOUDLAB", "MIV", "PSI", "COMPILADORS", "ALGORITMICA", "MODEL_THINKING", "RECURSOS_GEI"]
 
 # Notify sketchybar on workspace change
 exec-on-workspace-change = [
@@ -119,6 +119,10 @@ outer.top = 0
     ctrl-shift-4 = 'move-node-to-workspace PSI'
     ctrl-shift-5 = 'move-node-to-workspace COMPILADORS'
     ctrl-shift-6 = 'move-node-to-workspace ALGORITMICA'
+    ctrl-7 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 7 "MODEL_THINKING"'
+    ctrl-shift-7 = 'move-node-to-workspace MODEL_THINKING'
+    ctrl-8 = 'exec-and-forget /Users/ivanmolineromoreno/.config/aerospace/scripts/change-aerospace-workspace.sh 8 "RECURSOS_GEI"'
+    ctrl-shift-8 = 'move-node-to-workspace RECURSOS_GEI'
     # Monitor interaction
     alt-ctrl-tab = 'move-workspace-to-monitor --wrap-around next' 
     alt-shift-tab = 'move-node-to-monitor --wrap-around next'
