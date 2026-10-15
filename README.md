@@ -28,10 +28,6 @@ Ghostty terminal. Fast, written in Zig. I am using it alongside other configurat
 Terminal editor with predefined config of LazyVim. Did not test the config thoroughly though.
 The specific commands for LazyVim can be seen pressing `space` key (default key for LazyVim).
 
-## JankyBorders
-Paints the borders of the actual selected window being focused.
-https://github.com/FelixKratz/JankyBorders
-
 ## Nix Package Manager
 Allows to have utils and commands without directly installing them on the system. Useful for smoke tests with uncommonly used utilities.
 
